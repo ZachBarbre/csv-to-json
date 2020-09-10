@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+// const day = require('dayjs');
 let data = '';
 const path = process.argv[2]
 
@@ -18,16 +18,17 @@ let prepForJson = csvArray.map(item => {
 })
 
 let keys = prepForJson.shift();
+keys = keys.map(key => key.trim())
 
 prepForJson.pop();
 
 let json = prepForJson.map(item => {
     let obj = {}
     item.forEach((value, index) => {
-        if (parseFloat(value) || parseFloat(value) === 0) {
-            obj[keys[index]] = parseFloat(value);
-        } else {
+        if (isNaN(value)) {
             obj[keys[index]] = value;
+        } else {
+            obj[keys[index]] = parseFloat(value);
         }
     })
     return obj;
