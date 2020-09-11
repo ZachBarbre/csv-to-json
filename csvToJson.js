@@ -1,5 +1,5 @@
 const fs = require('fs');
-// const day = require('dayjs');
+const day = require('dayjs');
 let data = '';
 const path = process.argv[2]
 
@@ -26,7 +26,11 @@ let json = prepForJson.map(item => {
     let obj = {}
     item.forEach((value, index) => {
         if (isNaN(value)) {
-            obj[keys[index]] = value;
+            if (day(value).isValid()) {
+                obj[keys[index]] = day(value);
+            } else {
+                obj[keys[index]] = value;
+            }
         } else {
             obj[keys[index]] = parseFloat(value);
         }

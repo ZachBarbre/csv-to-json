@@ -1,0 +1,22 @@
+{
+  "name": "csv-to-json",
+  "version": "1.0.0",
+  "description": "Simple csv to json converter",
+  "main": "csvToJson.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachBarbre/csv-to-json.git"
+  },
+  "author": "Zach Barbre",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZachBarbre/csv-to-json/issues"
+  },
+  "homepage": "https://github.com/ZachBarbre/csv-to-json#readme",
+  "dependencies": {
+    "dayjs": "^1.8.35"
+  }
+}
